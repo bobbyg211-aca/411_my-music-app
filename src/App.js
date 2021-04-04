@@ -1,14 +1,15 @@
-import React from "react";
-import "./App.css";
-import Dashboard from "./components/Dashboard";
-import SystemNotifications from "./components/SystemNotifications";
+import React from 'react';
+import Navigation from './components/Navigation'
+import './App.css'
+import Router from './Router'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
-    <div>
-      <Dashboard />
-      <SystemNotifications />
-    </div>
+    <BrowserRouter>
+      <Navigation />
+      <Router />
+    </BrowserRouter>
   );
 }
 
