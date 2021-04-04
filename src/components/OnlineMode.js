@@ -1,29 +1,27 @@
-import React, { useState } from "react";
-import { Card, Switch, Typography } from "@material-ui/core";
+import React from "react";
+import {
+  Card,
+  CardContent,
+  CardActions,
+  Switch,
+  Typography,
+} from "@material-ui/core";
 
-export default function OnlineMode() {
-  const [isConnected, setIsConnected] = useState(false);
-
-  const handleChange = (e) => {
-    setIsConnected(!isConnected);
-  };
+export default function OnlineMode(props) {
+  const { handleSwitch } = props;
 
   return (
     <Card className="card">
-      <Typography>
-        <h3>Online Mode</h3>
-        <p>Is this application connected to the internet?</p>
-      </Typography>
-
-      <Switch onChange={handleChange}></Switch>
-      {!isConnected && (
+      <CardContent>
         <Typography>
-          <p>
-            Your application is offline. You won't be able to share or stream
-            music to other devices.
-          </p>
+          <h3>Online Mode</h3>
+          <p>Is this application connected to the internet?</p>
         </Typography>
-      )}
+      </CardContent>
+
+      <CardActions>
+        <Switch onChange={handleSwitch}></Switch>
+      </CardActions>
     </Card>
   );
 }
